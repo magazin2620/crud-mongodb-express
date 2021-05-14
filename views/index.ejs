@@ -3,45 +3,54 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title>APP</title>
+	<title>crud app</title>
+	<link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
-	<h1>Node Express MongoDB</h1>
+	<h1 data-position="header">MongoDB Express Node</h1>
 
-	<form action="/notes" method="POST">
-		<input type="text" placeholder="name" name="name" />
-		<input type="text" placeholder="note" name="note" />
-		<button type="submit">Submit</button>
-	</form>
+	<section data-position="add-note">
+		<h2>Add note</h2>
+		<form action="/notes" method="POST">
+			<input type="text" placeholder="name" name="name" />
+			<input type="text" placeholder="note" name="note" />
+			<button type="submit">Submit</button>
+		</form>
+	</section>
 
-	<h2> Notes </h2>
+	<section data-position="update-note">
+		<div>
+			<h2>Update note</h2>
+			<p>
+				Replace some note with another note
+			</p>
+			<button id="update-button">Replace some note</button>
+		</div>
+	</section>
 
-	<ul class="notes">
-		<% for(let i = 0; i < notes.length; i++) {%>
-		<li class="note">
-			<span><%= notes[i].name %></span>:
-			<span><%= notes[i].note %></span>
-		</li>
-		<% } %>
-	</ul>
+	<section data-position="delete-note">
+		<div>
+			<h2>Remove another note</h2>
+			<p>
+				Delete one another note
+			</p>
+			<button id="delete-button">Delete another note</button>
+			<div id="message"></div>
+		</div>
+	</section>
 
-	<div>
-		<h2>Update note</h2>
-		<p>
-			Replace some note with another note
-		</p>
-		<button id="update-button">Replace some note</button>
-	</div>
-
-	<div>
-		<h2>Remove another note</h2>
-		<p>
-			Delete one another note
-		</p>
-		<button id="delete-button">Delete another note</button>
-		<div id="message"></div>
-	</div>
+	<section data-position="notes">
+		<h2> Notes </h2>
+		<ul class="notes">
+			<% for(let i = 0; i < notes.length; i++) {%>
+			<li class="note">
+				<span><%= notes[i].name %></span>:
+				<span><%= notes[i].note %></span>
+			</li>
+			<% } %>
+		</ul>
+	</section>
 
 	<script src="/main.js"></script>
 </body>

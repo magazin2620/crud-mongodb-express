@@ -1,0 +1,60 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.4;
+  font-family: Helvetica;
+}
+
+body {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto 2fr;
+  grid-template-areas:
+    "header header header"
+    "add-note update-note delete-note"
+    "notes notes notes";
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+  background-color: #ffffff;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+[data-position="header"] {
+  grid-area: header;
+}
+
+[data-position="add-note"] {
+  grid-area: add-note;
+}
+
+[data-position="update-note"] {
+  grid-area: update-note;
+}
+
+[data-position="delete-note"] {
+  grid-area: delete-note;
+}
+
+[data-position="notes"] {
+  grid-area: notes;
+  overflow: scroll;
+}
+
+[data-position] {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+h1,
+h2 {
+  margin: 0;
+}
